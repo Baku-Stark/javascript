@@ -49,6 +49,18 @@ n.toString()
 {Formatando Strings}
 
 var s = 'JavaScript'
+--- s.lenght            // Contagem de caracteres
+        var nome = window.prompt('Qual o seu nome? ')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letra(s).`)
+        
+--- s.toUpperCase()     // String toda em MAIÚSCULAS
+        var nome = window.prompt('Qual o seu nome? ')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.toUpperCase()} letra(s).`)
+        
+--- s.toLowerCase()     // String toda em MINÚCULAS
+        var nome = window.prompt('Qual o seu nome? ')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.toLowerCase()} letra(s).`)
+        
 'Eu estou aprendendo s'    // Não faz interpolação
 'Eu estou aprendendo' + s  // Usa
 `Eu estou aprendendo ${s}` // Usa template string
@@ -63,6 +75,32 @@ var s = 'JavaScript'
 'O aluno Wallace de 21 anos tirou a nota 10'
 
 ------------------------------------------------------------
+{Formatando Números}
+
+var n1 = 1543.5
+--- n1.toFixed(número de casas)      // Duas casas depois do ponto
+        > var n1 = 1543.5
+        undefined
+        > n1.toFixed(2)
+        '1543.50'
+        
+--- n1.toFixed(2).replace('.', ',') // Troca o ponto por vírgula
+        '1543,30'
+
+--- n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+        // Transforma o valor na moeda local (Real - Brasil).
+        'R$ 1.543,30'
+        
+    n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+        // Transforma o valor na moeda local (Dólar - EUA).
+        'US$ 1.543,30'
+        
+    n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+        // Transforma o valor na moeda local (Euro - Europa).
+        '€ 1.543,30'
+        
+------------------------------------------------------------
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
