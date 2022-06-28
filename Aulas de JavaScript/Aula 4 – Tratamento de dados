@@ -34,3 +34,67 @@
 </html>
 
 ------------------------------------------------------------
+{Convertendo valores Strings > Numbers}
+
+Number(num)
+Number.parseInt(num)
+Number.parseFloat(num)
+
+{Convertendo valores Numbers > Strings}
+
+String(num)
+n.toString()
+
+------------------------------------------------------------
+{Formatando Strings}
+
+var s = 'JavaScript'
+'Eu estou aprendendo s'    // Não faz interpolação
+'Eu estou aprendendo' + s  // Usa
+`Eu estou aprendendo ${s}` // Usa template string
+
+> nome = 'Wallace'
+'Wallace'
+> idade = 21
+21
+> nota = 10.0
+10
+> `O aluno ${nome} de ${idade} anos tirou a nota ${nota}`
+'O aluno Wallace de 21 anos tirou a nota 10'
+
+------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="GoogleChrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem</title>
+    <style>
+        body {
+            color: black;
+            font: normal 20pt Arial;
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1 {
+            color: rgb(43, 174, 226);
+        }
+
+        p {
+            color: rgb(49, 49, 49);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!!!</h1>
+    <p>Já me livrei da maldição.</p>
+    <script>
+        var num1 = Number.parseInt(window.prompt('Registre o 1° número'))
+        var num2 = Number.parseInt(window.prompt('Registre o 2° número'))
+        var valor = num1 + num2
+        window.alert(`A soma ente ${num1} + ${num2} é igual à: ${valor}`)
+    </script>
+</body>
+</html>
