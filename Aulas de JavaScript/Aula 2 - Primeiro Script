@@ -28,11 +28,11 @@ Já sabe utilizar os comandos alert, confirm e prompt do JavaScript?
 </head>
 <body>
     <h1>Olá, Mundo!!!</h1>
-    <p>Já me livrei da maldiçao.</p>
+    <p>Já me livrei da maldição.</p>
     <script>
-        window.alert('Minha primeira mensagem.')
-        window.confirm('Está gostando de JS?')
-        window.prompt('Qual é seu nome?')
+        window.alert('Minha primeira mensagem.') //Caixa de alerta
+        window.confirm('Está gostando de JS?') //Botão de 'OK'
+        window.prompt('Qual é seu nome?') //Caixa de registro
     </script>
 </body>
 </html>
