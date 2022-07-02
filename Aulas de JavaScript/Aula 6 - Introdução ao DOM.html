@@ -1,0 +1,99 @@
+Selecionando:
+
+-- por Marca:   getElementsByTagName()
+    <div>Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0] // [0;1] Para selecionar o parágrafo
+        corpo.style.background  = 'black'
+        p1.style.color = 'blue'
+    </script>
+
+-- por ID:      getElementsByID(#)
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] // [0;1] Para selecionar o parágrafo
+        var d = window.document.querySelector('div#msg')
+
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+    </script>
+
+-- por Nome:    getElementsByName()
+
+-- por Classe:  getElementsByClassName()
+
+-- por Seletor: querySelector(.)
+                querySelectorAll()
+
+    <div class="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] // [0;1] Para selecionar o parágrafo
+        var d = window.document.querySelector('div.msg')
+
+        d.style.background = 'blue'
+    </script>
+
+--------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(16, 87, 180);
+            color: white;
+            font: normal 18pt Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Começo da aula</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong></p>
+    <div>Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0] // [0;1] Para selecionar o parágrafo
+        corpo.style.background  = 'black'
+        p1.style.color = 'blue'
+    </script>
+</body>
+</html>
+--------------------------------------------------------------------------------------------
+{Utilizando o 'inner'}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - Introdução ao DOM</title>
+    <style>
+        body {
+            background-color: rgb(16, 87, 180);
+            color: white;
+            font: normal 18pt Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Começo da aula</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong></p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1] // [0;1] Para selecionar o parágrafo
+        
+        window.alert(p1.innerHTML) // 'innerHTML' -- Pega todo o arq. HTML | 'innerText' -- Pega o texto sem a formatação
+    </script>
+</body>
+</html>
