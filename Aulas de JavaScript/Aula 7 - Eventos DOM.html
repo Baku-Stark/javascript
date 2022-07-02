@@ -1,0 +1,105 @@
+{Eventos DOM}
+>>> https://developer.mozilla.org/pt-BR/docs/Web/Events
+<div></div> 
+  -- mouseenter = 'Entrou na div'
+  -- mousemove = 'Movendo o cursor pela div'
+  -- mousedown = 'Pressionando o cursor na div'
+  -- mouseup = 'Soltando o cursor da div'
+  -- click = 'Evento click padrão'
+  -- mouseout = 'Cursor fora da div'
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(80, 235, 80);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+
+    <script>
+        var area = window.document.getElementById('area')
+        // deixar fora para poupar memória e funcionar nas outras funções do 'script'
+        
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+        // deixando mais estético
+        
+        function clicar() {
+            area.innerText = 'Clicou!'
+            area.style.background = 'red'
+        }
+
+        function entrar() {
+            area.innerText = 'Entrou!'
+            area.style.background = 'blue'
+        }
+
+        function sair() {
+            area.innerText = 'Interaja...'
+            area.style.background = 'rgb(80, 235, 80)'
+        }
+
+    </script>
+</body>
+</html>
+-------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+
+        div#res {
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Somando valores!</h1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()">
+    <div id="res">Resultado</div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} + ${n2} = <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
