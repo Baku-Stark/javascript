@@ -17,6 +17,14 @@ section {
     margin: auto;
 }
 
+div {
+    text-align: center;
+    padding: 15px;
+}
+div#foto {
+    align-items: center;
+}
+
 footer {
     color: white;
     text-align: center;
