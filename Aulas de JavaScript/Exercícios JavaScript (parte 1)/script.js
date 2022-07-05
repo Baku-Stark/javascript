@@ -7,15 +7,15 @@ function carregar() {
     msg.innerText = `Agora são... ${hora} horas!!!`
     if (hora >= 0 && hora < 12) {
         // BOM DIA!
-        img.src = '_imagensjs/manha_circulo.png'
+        img.src = '../_imagensjs/manha_circulo.png'
         document.body.style.background = '#e2cd9f'
     } else if (hora >= 12 && hora < 18) {
         // BOA TARDE!
-        img.src = '_imagensjs/tarde_circulo.png'
+        img.src = '../_imagensjs/tarde_circulo.png'
         document.body.style.background = '#b9846f'
     } else {
         // BOA NOITE!
-        img.src = '_imagensjs/noite_circulo.png'
+        img.src = '../_imagensjs/noite_circulo.png'
         document.body.style.background = '#515154'
     }
 }
