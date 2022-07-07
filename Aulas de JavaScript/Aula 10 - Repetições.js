@@ -14,7 +14,6 @@ do {
 } while (c <= 6)
 
     
-    
 {UTILIZANDO O "for"}
 console.log('Vai começar...')
 for(var c = 1;c <= 4;c++) {
