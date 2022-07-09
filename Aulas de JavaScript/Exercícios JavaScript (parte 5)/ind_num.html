@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>--- Analisador de Números ---</title>
+    <link rel="stylesheet" href="analise.css">
+</head>
+<body>
+    <header>
+        <h1>Análise De Números</h1>
+    </header>
+    <section>
+        <div id="dados">
+            Número (entre 1 a 100): <input type="number" name="numero" id="txtn" max="100000000000000" min="0" placeholder="Escolha um número">
+            <input type="button" value="Adicionar" onclick="analise()">
+            <br><select name="flista" id="flista" size="6"></select>
+            <br><input type="button" value="Finalizar" onclick="final()">
+        </div>
+        <div id="res">
+            Esperando os valores...
+        </div>
+    </section>
+    <footer>
+        <p>&copy; CursoEmVideo --- Wallace</p>
+    </footer>
+    <script src="analise.js"></script>
+</body>
+</html>
