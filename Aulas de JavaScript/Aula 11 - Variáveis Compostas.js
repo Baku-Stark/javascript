@@ -18,6 +18,14 @@ console.log('---> Números do vetor em ordem crescente: ' + num)
 console.log(`O vetor possui: ${num.length} casa(s)`)
 console.log(`O primeiro número é o ${num[0]}`)
 
+let num = [5, 8, 2, 9, 3]
+num.push(1)
+num.sort()
+console.log('---> Números do vetor em ordem crescente: ' + num)
+console.log(`O vetor possui: ${num.length} casa(s)`)
+console.log(`O primeiro número é o ${num[0]}`)
+console.log(`O número 8 está na posição: ${num.indexOf(8)}`) //Encontrar números desejados
+
 let valores = [8, 1, 7, 4, 2, 9]
 /* console.log(valores[0])
 console.log(valores[1])
