@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintando A Parede</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-content">
+            <h1>Calcular área da parede</h1>
+        </div>
+        <div class="bottom-content">
+            <p>Área de um quadrado/retângulo</p>
+            <p class="text-set">A = b * h</p>
+            <!--ALTURA [input]-->
+            <input 
+                type="number" 
+                name="numAlt" 
+                id="numAlt"
+                placeholder="Registre a altura"
+            >
+            <!--BASE [input]-->
+            <input 
+                type="number" 
+                name="numBase" 
+                id="numBase"
+                placeholder="Registre a base"
+            >
+            
+            <!--FUNCTION BUTTON-->
+            <button 
+                class="button-check"
+                onclick="funcPaint()"
+            >Enviar</button>
+        </div>
+    </div>
+
+    <script src="009 - exe.js"></script>
+</body>
+</html>
