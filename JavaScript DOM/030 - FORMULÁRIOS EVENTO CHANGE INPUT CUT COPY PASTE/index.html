@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>030 - FORMULÁRIOS EVENTO CHANGE INPUT CUT COPY PASTE</title>
+    <style>
+        div{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- form.form#form[name=formulario] -->
+    <form action="#" method="post" name="formulario">
+        <div>
+            <label for="tarefa">Tarefa</label>
+            <input
+                onpaste="paste()"
+                type="text"
+                name="tarefa"
+                id="tarefa"
+                placeholder="Adicione uma nota"
+            >
+        </div>
+        <div>
+            <label for="duuracao">Quanto Tempo</label>
+            <select name="duracao">
+                <option value="1">1 dia</option>
+                <option value="2">2 dias</option>
+                <option value="3">3 dias</option>
+            </select>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

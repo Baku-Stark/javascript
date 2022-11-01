@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>029 - FORMULÁRIOS EVENTO FOCUS E BLUR</title>
+    <style>
+        input#usuario.focus, input#senha.focus{
+            color: #f0f8ff;
+            background-color: #111111;
+        }
+    </style>
+</head>
+<body>
+    <!-- form.form#form[name=formulario] -->
+    <form action="#" method="post" name="formulario">
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario">
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

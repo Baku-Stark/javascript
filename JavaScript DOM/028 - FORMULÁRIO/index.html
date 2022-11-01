@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>028 - FORMULÁRIO</title>
+    <style>
+        div.line{
+            width: 100%;
+            height: 1px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario">
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+    <div class="line"></div>
+    <form action="#" method="post" name="frm_register">
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario" value="vergil">
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
