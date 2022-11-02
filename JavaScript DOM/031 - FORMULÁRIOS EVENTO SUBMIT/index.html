@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>031 - FORMULÁRIOS EVENTO SUBMIT</title>
+    <style>
+        body{
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div.container{
+            padding: 40px 70px;
+            border: 1px solid #000000;
+        }
+
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+
+        div:last-child{
+            margin-top: 20px;
+        }
+
+        div > label{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" id="formulario" method="post">
+            <div>
+                <label for="usuario">Usuario</label>
+                <input type="text" name="text_usuario" id="usuario">
+            </div>
+            <div>
+                <label for="senha">Senha</label>
+                <input type="password" name="text_senha" id="senha">
+            </div>
+            <div>
+                <input type="submit" value="Entrar">
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
