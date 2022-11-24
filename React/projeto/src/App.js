@@ -1,16 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import HellWorld from './componentes/HelloWorld.js';
+/* <HellWorld /> => Importado */
+
+import CallMeByYourName from './componentes/CallMeByYourName.js'
+/* <CallMeByYourName /> => Importado */
+
+import Foto from './componentes/Foto.js'
+/* <Foto /> => Importado */
 
 function App() {
-  const name = "Wallace"
-  const newName = name.toUpperCase()
+  const nomeApp = "Tony"
 
-  const idade = 22
   return (
     <div className="App">
-      <h2 className="h2-text">Olá</h2>
-      <p>Nome: {newName}</p>
-      <p>Idade: {idade} anos</p>
+      <HellWorld />
+      <CallMeByYourName nome="Wallace"/>
+      <CallMeByYourName nome={nomeApp}/>
+      <Foto
+        nome={nomeApp}
+        idade="52"
+        profissao="Vingador"
+        foto="https://via.placeholder.com/150"
+      />
     </div>
   );
 }
