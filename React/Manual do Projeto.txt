@@ -1,0 +1,5 @@
+-- Mais sobre React: https://reactjs.org/
+
+Ativação do React (com npx): npx create-react-app projeto
+
+Entrando na pasta do React: <destino do arquivo> cd .\<nome da pasta do projeto>
