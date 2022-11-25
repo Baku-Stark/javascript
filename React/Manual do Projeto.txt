@@ -3,3 +3,5 @@
 Ativação do React (com npx): npx create-react-app projeto
 
 Entrando na pasta do React: <destino do arquivo> cd .\<nome da pasta do projeto>
+
+Instalando a lib BrowserRouter: npm install react-router-dom

@@ -1,4 +1,10 @@
 import './App.css';
+import { useState } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Home from './page/Home';
+import Empresa from './page/Empresa';
+import Contato from './page/Contato';
+
 import HellWorld from './componentes/HelloWorld.js';
 /* <HellWorld /> => Importado */
 
@@ -23,9 +29,19 @@ import Form from './componentes/Form'
 import Condicional from './componentes/Cond'
 /* <Condicional /> => Importado */
 
+import ListaArray from './componentes/ListArray'
+/* <ListaArray /> => Importado */
+
+import YourName from './componentes/YourName';
+/* <YourName /> => Importado */
+
+import Saudacao from './componentes/Saudacao';
+/* <Saudacao /> => Importado */
+
 function App() {
   const nomeApp = "Tony"
-
+  const meusItens = ['React', 'Vue', 'Angular']
+  const [nome, setNome] = useState()
   return (
     <div className="App">
       <HellWorld />
@@ -43,7 +59,38 @@ function App() {
       <Form />
       <h1>Renderização Condicional</h1>
       <Condicional/>
-    </div>
+      <h1>Lista de coisas boas</h1>
+      <ListaArray itens={meusItens}/>
+      <ListaArray itens=''/>
+      <h1>Curso React: State Lift - #14</h1>
+      <YourName setNome={setNome}/>
+      <Saudacao nome={nome}/>
+      <h1>Curso React: Implementando o React Router - #15</h1>
+      <Router>
+        <ul>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/empresa">Empresa</Link>
+          </li>
+          <li>
+            <Link to="/contato">Contato</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path="/Home">
+            <Home/>
+          </Route>
+          <Route path="/empresa">
+            <Empresa/>
+          </Route>
+          <Route path="/contato">
+            <Contato/>
+          </Route>
+        </Switch>
+      </Router>
+  </div>
   );
 }
 
