@@ -14,6 +14,15 @@ import Frase from './componentes/Frase'
 import List from './componentes/List'
 /* <List /> => Importado */
 
+import Event from './componentes/Event'
+/* <Event /> => Importado */
+
+import Form from './componentes/Form'
+/* <Form /> => Importado */
+
+import Condicional from './componentes/Cond'
+/* <Condicional /> => Importado */
+
 function App() {
   const nomeApp = "Tony"
 
@@ -30,6 +39,10 @@ function App() {
         foto="https://via.placeholder.com/150"
       />
       <List />
+      <Event/>
+      <Form />
+      <h1>Renderização Condicional</h1>
+      <Condicional/>
     </div>
   );
 }
