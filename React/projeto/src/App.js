@@ -1,9 +1,11 @@
-import './App.css';
+import React from 'react';
 import { useState } from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import Home from './page/Home';
-import Empresa from './page/Empresa';
-import Contato from './page/Contato';
+
+import './App.css';
+/* <CSS da página */
+
+import NavBar from './page/navbar';
+/* <Navbar /> => Importado */
 
 import HellWorld from './componentes/HelloWorld.js';
 /* <HellWorld /> => Importado */
@@ -66,31 +68,7 @@ function App() {
       <YourName setNome={setNome}/>
       <Saudacao nome={nome}/>
       <h1>Curso React: Implementando o React Router - #15</h1>
-      <Router>
-        <ul>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/empresa">Empresa</Link>
-          </li>
-          <li>
-            <Link to="/contato">Contato</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route exact path="/Home">
-            <Home/>
-          </Route>
-          <Route path="/empresa">
-            <Empresa/>
-          </Route>
-          <Route path="/contato">
-            <Contato/>
-          </Route>
-        </Switch>
-      </Router>
-  </div>
+    </div>
   );
 }
 
