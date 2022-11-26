@@ -4,9 +4,6 @@ import { useState } from 'react';
 import './App.css';
 /* <CSS da página */
 
-import NavBar from './page/navbar';
-/* <Navbar /> => Importado */
-
 import HellWorld from './componentes/HelloWorld.js';
 /* <HellWorld /> => Importado */
 
