@@ -9,26 +9,17 @@ import Empresa from './componentes/pages/Empresa'
 import Contato from './componentes/pages/Contato'
 /* pages => Importado */
 
+import Header from './componentes/Navbar';
+/* navbar <Header/> => Importado */
+
 
 function App(){
   return (
     <div className="App">
-      <header>
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>Empresa</li>
-            <li>Contato</li>
-          </ul>
-        </nav>
-      </header>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/a' element={<Home />}/>
-          <Route path='/b' element={<Empresa />}/>
-          <Route path='/c' element={<Contato />}/>
-        </Routes>
-      </BrowserRouter>
+      <Header />
+      <Home />
+      <Empresa />
+      <Contato />
     </div>
   );
 }
