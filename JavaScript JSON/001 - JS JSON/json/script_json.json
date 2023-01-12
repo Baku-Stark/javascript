@@ -1,0 +1,22 @@
+[
+    {
+        "nome": "Wallace",
+        "idade": 22,
+        "esta_trabalhando": false,
+        "detalhes_profissao": {
+            "profissao": ["programador", "professor"],
+            "empresa": "Empresa X"
+        },
+        "hobbies": ["Programar", "Escutar música", "Jogar YGO"]
+    },
+    {
+        "nome": "Tony Stark",
+        "idade": 52,
+        "esta_trabalhando": false,
+        "detalhes_profissao": {
+            "profissao": ["vingador", "gênio", "bilionario", "playboy", "filantropo"],
+            "empresa": "Stark Industries"
+        },
+        "hobbies": ["Criar Marks", "Zoar Steve Rogers"]
+    }
+]
