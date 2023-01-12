@@ -1,0 +1,64 @@
+@import 'variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #f0f8ff;
+}
+
+body, html{
+    height: 100%;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+}
+
+div.App{
+    padding-top: 3rem;
+    text-align: center;
+    @include displayCustom-2(column, center);
+    h1.main-title{
+        margin-bottom: 2rem;
+    }
+}
+
+div.welcome-content{
+    max-width: 500px;
+    text-align: center;
+    h2, p{
+        margin-bottom: 1rem;
+    }
+    p{
+        color: #8435de;
+    }
+    img{
+        margin-top: 2rem;
+    }
+}
+
+div.welcome-content img{
+    max-width: 100%;
+}
+
+button{
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 3rem;
+    padding: .8rem 1.5rem;
+    border: none;
+    font-weight: bold;
+    transition: $tran-03;
+    background: linear-gradient(
+        90deg, 
+        #8435de 0%, 
+        #b854e8 100%
+    );
+    &:hover{
+        transition: $tran-03;
+        background: linear-gradient(
+            90deg, 
+            #8435de 100%,
+            #b854e8 0%
+        );
+    }
+}
