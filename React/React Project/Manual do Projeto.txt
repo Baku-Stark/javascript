@@ -4,13 +4,13 @@ Ativação do React (com npx):
 	|
 	`--> npx create-react-app project
 	`--> npm create vite@latest
+		`--> npm install
+			`--> npm run dev
 
 ================================================================================
 Entrando na pasta do React:
 	|
 	`--> <destino do arquivo> cd .\<nome da pasta do projeto>
-		`--> npm install
-		`--> npm run dev
 		`--> npm start
 
 ================================================================================
