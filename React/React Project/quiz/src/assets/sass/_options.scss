@@ -1,0 +1,19 @@
+div.options-class{
+    opacity: .8;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+    transition: $tran-02;
+    cursor: pointer;
+    background-color: #3c0e70;
+    &:hover{
+        opacity: 1;
+    }
+    p{
+        font-weight: bold;
+    }
+}
+
+div.options-container p{
+    margin-bottom: 0;
+}

@@ -7,13 +7,20 @@ import { QuizContext } from '../context/quiz'
 import WellDone from '../img/welldone.svg'
 
 const Endgame = () => {
+    const [quizState, dispatch] = useContext(QuizContext)
+    /*
+        quizState -> Pega os valores
+        dispatch -> Altera os valores
+    */
   return (
     <div className="game-over">
         <h2>Game Over</h2>
-        <p>Pontuação</p>
-        <p>Você acertou y de z perguntas!</p>
+        <p>Pontuação: {quizState.score}</p>
+        <p>
+            Você acertou {quizState.score} de {quizState.questions.length} perguntas!
+        </p>
         <img src={WellDone} alt="Fim do Jogo!" />
-        <button>Recomeçar</button>
+        <button onClick={() => dispatch({type: "NEW_GAME"})}>Recomeçar</button>
     </div>
   )
 }
