@@ -1,6 +1,8 @@
 # PROJECT: REACT Quiz
 
-<img src="quiz/src/img/image.png">
+<div align="center">
+    <img src="quiz/src/img/image.png">
+</div>
 
 <hr>
 
