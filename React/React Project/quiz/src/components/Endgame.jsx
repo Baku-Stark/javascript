@@ -14,7 +14,7 @@ const Endgame = () => {
     */
   return (
     <div className="game-over">
-        <h2>Game Over</h2>
+        <h2>Fim de jogo!</h2>
         <p>Pontuação: {quizState.score}</p>
         <p>
             Você acertou {quizState.score} de {quizState.questions.length} perguntas!

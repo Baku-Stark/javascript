@@ -17,3 +17,13 @@ div.options-class{
 div.options-container p{
     margin-bottom: 0;
 }
+
+div.options-class.correct{
+    font-weight: bold;
+    background-color: #0bfc03;
+}
+
+div.options-class.wrong{
+    opacity: .4;
+    background-color: #3c0e70;
+}
