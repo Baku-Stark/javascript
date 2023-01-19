@@ -37,3 +37,8 @@
     04. Refaça o script anterior, mas agora pergunte ao usuário quantos números ele deseja inserir no array.
     Depois, o usuário vai preenchendo elemento por elemento do vetor.
     Ao final, exiba o array e o array ao contrário (generalização do script anterior).
+
+<hr>
+
+>
+    05. Faça uma função que recebe um array de qualquer tamanho e ordene seus elementos na ordem crescente. Faça sua função na mão, não invoque nenhum método de sorting. Dica: pesquise sobre bubble sort.
