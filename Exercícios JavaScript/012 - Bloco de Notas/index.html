@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap [ICONS] -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- CSS [**main] -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="assets/image/note.ico" type="image/x-icon">
+    <title>Lista de Tarefas | Javascript</title>
+</head>
+<body>
+    <div class="block-content-todo">
+        <div class="thead-content-header">
+            <div class="title">
+                <h2>Lista de Tarefas</h2>
+                <div class="icons-content">
+                    <a href="#">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="tbody-content-form">
+            <div class="block-form">
+                <form>
+                    <fieldset>
+                        <legend>Criar Anotação</legend>
+                        <div class="block-inputs">
+                            <textarea name="conteudo" id="i_conteudo" cols="30" rows="10" placeholder="Esperando sua anotação..." maxlength="100"></textarea>
+                        </div>
+                        <div class="block-inputs">
+                            <label for="i_qtd">Quantidade:</label>
+                            <input type="number" name="quantidade" id="i_qtd" min="0" value="0">
+                        </div>
+                        <div class="block-inputs">
+                            <label for="i_obs">Tarefa:</label>
+                            <input type="text" name="quantidade" id="i_obs"placeholder="Compras, Arrumar, etc...">
+                        </div>
+                        <div class="block-inputs">
+                            <button class="main_btn">Fazer anotação</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="block-notes">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mensagem</th>
+                            <th>Quantidade</th>
+                            <th>----</th>
+                        </tr>
+                    </thead>
+                    <tbody class="body-table">
+                        <tr>
+                            <td>Nenhuma marcação</td>
+                            <td>Nenhuma marcação</td>
+                            <td>
+                                <button><i class="bi bi-trash-fill"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nenhuma marcação</td>
+                            <td>Nenhuma marcação</td>
+                            <td>
+                                <button><i class="bi bi-trash-fill"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Javascript[**main] -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
