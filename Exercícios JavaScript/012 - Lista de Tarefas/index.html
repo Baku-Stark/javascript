@@ -38,18 +38,19 @@
                     <fieldset>
                         <legend>Criar Anotação</legend>
                         <div class="block-inputs">
-                            <textarea name="conteudo" id="i_conteudo" cols="30" rows="10" placeholder="Esperando sua anotação..." maxlength="100"></textarea>
+                            <textarea name="conteudo" id="i_conteudo" cols="30" rows="10" placeholder="Esperando sua anotação..." maxlength="100" required></textarea>
                         </div>
                         <div class="block-inputs">
                             <label for="i_qtd">Quantidade:</label>
-                            <input type="number" name="quantidade" id="i_qtd" min="0" value="0">
+                            <input type="number" name="quantidade" id="i_qtd" min="0" value="0" required>
                         </div>
                         <div class="block-inputs">
                             <label for="i_taskID">Tarefa(ID):</label>
-                            <input type="text" name="quantidade" id="i_taskID"placeholder="Compras, Arrumar, etc...">
+                            <input type="text" name="quantidade" id="i_taskID"placeholder="Compras, Arrumar, etc..." required>
                         </div>
                         <div class="block-inputs">
                             <button class="main_btn">Fazer anotação</button>
+                            <input type="reset" value="Limpar campos">
                         </div>
                     </fieldset>
                 </form>
@@ -65,22 +66,6 @@
                         </tr>
                     </thead>
                     <tbody class="body-table">
-                        <tr>
-                            <td>Nenhum id</td>
-                            <td>Nenhuma marcação</td>
-                            <td>Nenhuma marcação</td>
-                            <td>
-                                <button class="remove-btn-2"><i class="bi bi-trash-fill"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nenhum id</td>
-                            <td>Nenhuma marcação</td>
-                            <td>Nenhuma marcação</td>
-                            <td>
-                                <button class="remove-btn"><i class="bi bi-trash-fill"></i></button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>

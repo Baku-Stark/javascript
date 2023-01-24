@@ -170,8 +170,14 @@ body{
                     }
 
                     tr{
+                        text-align: center;
+
                         td{
                             opacity: .5;
+                            &:nth-child(1){
+                                font-weight: bold;
+                                color: #ff0000;
+                            }
                         }
     
                         td > button{
