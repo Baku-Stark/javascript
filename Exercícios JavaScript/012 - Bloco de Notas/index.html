@@ -45,8 +45,8 @@
                             <input type="number" name="quantidade" id="i_qtd" min="0" value="0">
                         </div>
                         <div class="block-inputs">
-                            <label for="i_obs">Tarefa:</label>
-                            <input type="text" name="quantidade" id="i_obs"placeholder="Compras, Arrumar, etc...">
+                            <label for="i_taskID">Tarefa(ID):</label>
+                            <input type="text" name="quantidade" id="i_taskID"placeholder="Compras, Arrumar, etc...">
                         </div>
                         <div class="block-inputs">
                             <button class="main_btn">Fazer anotação</button>
@@ -58,6 +58,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Mensagem</th>
                             <th>Quantidade</th>
                             <th>----</th>
@@ -65,17 +66,19 @@
                     </thead>
                     <tbody class="body-table">
                         <tr>
+                            <td>Nenhum id</td>
                             <td>Nenhuma marcação</td>
                             <td>Nenhuma marcação</td>
                             <td>
-                                <button><i class="bi bi-trash-fill"></i></button>
+                                <button class="remove-btn-2"><i class="bi bi-trash-fill"></i></button>
                             </td>
                         </tr>
                         <tr>
+                            <td>Nenhum id</td>
                             <td>Nenhuma marcação</td>
                             <td>Nenhuma marcação</td>
                             <td>
-                                <button><i class="bi bi-trash-fill"></i></button>
+                                <button class="remove-btn"><i class="bi bi-trash-fill"></i></button>
                             </td>
                         </tr>
                     </tbody>
