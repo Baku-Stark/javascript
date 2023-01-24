@@ -34,12 +34,38 @@ function delete_Note(task_id){
    console.log('\033[1;35m'+`    └── [DEL] -> [${task_id}]`+'\033[m')
 }
 
-function read_Note(task_id){
+function read_Note(){
     /*
         ├── Ler o contéudo do localStorage.
+        ├
+        ├── Return:
+            ├── localStorage_set -> Pegar todos os dados [registrados] do localStorage
+            ├── localStorage_keys -> ID's dos dados (keyItem)
+            ├
+            └── Variables:
+                ├── task_id -> ID da anotação
+                ├── jsonData -> Pegar o valor do localStorage pelo kyItem
+                ├── obj_jsonData -> Retorna o objeto [ctd, qtd]
+                ├
+                ├── note -> Nota do localStorage [ctd]
+                └── qtd_Select -> Quantidade do objeto localStorage [qtd]
     */
+
+    const localStorage_set = {...localStorage}
+    const localStorage_keys = Object.keys(localStorage_set)
+
+    for(var c = 0; c<localStorage_keys.length;c++){
+        const task_id = localStorage_keys[c]
+        const jsonData = localStorage.getItem(task_id)
+        const obj_jsonData = JSON.parse(jsonData)
+
+        const note = obj_jsonData.ctd
+        const qtd_Select = obj_jsonData.qtd
+
+        newRoleTable(task_id, note, qtd_Select)
+    }
     console.log('\033[1;34m [-][CHECK] Leitura do localStorage feita com sucesso! \033[m')
-    console.log('\033[1;34m'+`    └── [CREATED] -> [${task_id}]`+'\033[m')
+    console.log('\033[1;34m'+`    └── [READ] -> ${localStorage_set}`+'\033[m')
 }
 
 const newRoleTable = (task_id, note, qtd_Select) => {
@@ -146,12 +172,11 @@ createBTN.addEventListener('click', (e) => {
             qtd_Select = "Nenhuma quantidade"
 
             const noteContent_Dic = {
-                "conteudo": con_Select,
-                "quantidade": qtd_Select
+                "ctd": con_Select,
+                "qtd": qtd_Select
             }
 
             create_Note(noteContent_Dic)
-            read_Note(taskID_Select)
             newRoleTable(taskID_Select, con_Select, qtd_Select)
         }
 
@@ -159,12 +184,11 @@ createBTN.addEventListener('click', (e) => {
             qtd_Select = parseInt(qtd_Select.value)
             
             const noteContent_Dic = {
-                "conteudo": con_Select,
-                "quantidade": qtd_Select
+                "ctd": con_Select,
+                "qtd": qtd_Select
             }
 
             create_Note(taskID_Select, noteContent_Dic)
-            read_Note(taskID_Select)
             newRoleTable(taskID_Select, con_Select, qtd_Select)
 
             // Alterar texto no botão
@@ -172,3 +196,12 @@ createBTN.addEventListener('click', (e) => {
         }
     }
 })
+
+
+function testeRead(){
+    const localStorage_set = {...localStorage}
+    console.log(localStorage_set.teste)
+}
+
+// ====================
+read_Note()
