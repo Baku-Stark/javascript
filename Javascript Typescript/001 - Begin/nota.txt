@@ -1,0 +1,14 @@
+==================================================
+TypeScript
+    ├── instalação: npm i -g TypeScript
+    └── versão: 4.9.4
+
+FUNCIONALIDADES[TypeScript]
+    ├── Folders
+        ├── dist [Pasta para hospedagem]
+        └── src: [Pasta para armazenamento dos códigos]
+
+COMANDOS[TypeScript]
+    ├── tsc --init: Iniciar o TypeScript
+        ├── tsc: Compilar os arquivos de maneira manual
+        ├── tsc -w: Compilação automática
