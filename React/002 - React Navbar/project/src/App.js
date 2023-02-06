@@ -1,6 +1,9 @@
 /* CSS [main] */ 
 import './App.css';
 
+/* React [Router > npm i react-router-dom]*/
+import { Route, Routes } from 'react-router-dom'; 
+
 /* JavaScript [components > Folders] */ 
 import Navbar from './components/navbar.js';
 
@@ -10,24 +13,15 @@ import About from './templates/About';
 import Pricing from './templates/Pricing';
 
 function App() {
-  let components
-  switch(window.location.pathname){
-    case "/":
-      components = <Home/>
-      break
-    case "/pricing":
-      components = <Pricing/>
-      break
-    case "/about":
-      components = <About/>
-      break
-
-  }
   return (
     <>
       <Navbar/>
       <div className="container">
-        {components}
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/pricing' element={<Pricing />}/>
+          <Route path='/about' element={<About />}/>
+        </Routes>
       </div>
     </>
   );
