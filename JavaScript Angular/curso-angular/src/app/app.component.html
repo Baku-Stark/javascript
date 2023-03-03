@@ -1,4 +1,16 @@
 <h1>Hello World, Angular!!!</h1>
+<div>
+    <a href="#">Clique aqui</a>
+</div>
 
 <!-- IMPORTANDO O PRIMEIRO COMPONENTE DA APLICAÇÃO -->
 <app-first-component></app-first-component>
+
+<!-- [ng generate component components/parent-data] -->
+<app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
+
+<!-- DIRETIVAS -->
+<app-diretivas></app-diretivas>
+
+<!-- Renderização condicional -->
+<app-if-render></app-if-render>
