@@ -1,0 +1,14 @@
+<div class="class">
+    <h2>Two Way Data Binding</h2>
+    <form action="post">
+        <input type="text" [(ngModel)]="name" name="name"
+        placeholder="Digite seu nome">
+        <input type="submit" value="Enviar">
+    </form>
+    <div *ngIf="name === ''; else nameNotFound">
+        <p>Nenhum nome foi apresentado</p>
+    </div>
+    <ng-template #nameNotFound>
+        <p>O nome é: {{name}}</p>
+    </ng-template>
+</div>
