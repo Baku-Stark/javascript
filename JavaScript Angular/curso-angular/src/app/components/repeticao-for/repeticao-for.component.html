@@ -26,7 +26,13 @@
             Tipo: {{animal.type}}
         </p>
         <p>
-            <button (click)="showAge(animal)">Show Age</button>
+            <button (click)="showAge(animal)">
+                Show Age
+            </button>
+            
+            <button (click)="removeAnimal(animal)">
+                Excluir{{animal.name}}
+            </button>
         </p>
     </div>
     <div>

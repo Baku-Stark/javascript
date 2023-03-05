@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 // IMPORT INTERFACE
 import { Animal } from 'src/app/Animal'
 
+// IMPORT SERVICES
+import { ListService } from 'src/app/service/list.service'
+
 @Component({
   selector: 'app-repeticao-for',
   templateUrl: './repeticao-for.component.html',
@@ -27,5 +30,12 @@ export class RepeticaoForComponent {
   
   showAge(animal:Animal){
     this.animalsDetails = `O pet ${animal.name} possui ${animal.age} anos.`
+  }
+
+  constructor(private listService: ListService){}
+
+  removeAnimal(animal:Animal){
+    console.log(`${animal.name} foi removido com sucesso!`)
+    this.animalsInterface = this.listService.remove(this.animalsInterface, animal)
   }
 }
