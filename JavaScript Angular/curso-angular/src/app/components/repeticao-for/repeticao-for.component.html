@@ -4,23 +4,15 @@
     <p *ngFor="let name of myList">
         O nome do usuário é: {{name}}
     </p>
-    
-    <!-- Laço de repetição com dicionário -->
-    <h2>Animais</h2>
-    <div *ngFor="let animal of animals">
-        <p>
-            Nome do pet: {{animal.name}}
-        </p>
-        <p>
-            Tipo: {{animal.type}}
-        </p>
-    </div>
 
     <!-- Laço de repetição com dicionário -->
     <h2>Animais (interface)</h2>
     <div *ngFor="let animal of animalsInterface">
         <p>
-            Nome do pet: {{animal.name}}
+            Nome do pet: 
+            <a routerLink="{{animal.id}}">
+                {{animal.name}}
+            </a>
         </p>
         <p>
             Tipo: {{animal.type}}

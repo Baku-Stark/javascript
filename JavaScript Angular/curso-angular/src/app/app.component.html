@@ -1,31 +1,25 @@
 <h1>Hello World, Angular!!!</h1>
-<div>
-    <a href="#">Clique aqui</a>
-</div>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="/list/">Lista</a>
+            </li>
+            <li>
+                <a href="/pipes/">Pipes</a>
+            </li>
+            <li>
+                <a href="/diretivas/">Diretivas</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-<!-- IMPORTANDO O PRIMEIRO COMPONENTE DA APLICAÇÃO -->
-<app-first-component></app-first-component>
+<router-outlet></router-outlet>
 
-<!-- [ng generate component components/parent-data] -->
-<app-parent-data [name]="userName" [userData]="userData"></app-parent-data>
-
-<!-- DIRETIVAS -->
-<app-diretivas></app-diretivas>
-
-<!-- Renderização condicional -->
-<app-if-render></app-if-render>
-
-<!-- Eventos -->
-<app-eventos></app-eventos>
-
-<!-- Emitindo eventos -->
-<app-emiter></app-emiter>
-
-<!-- Laço de Repetição -->
-<app-repeticao-for></app-repeticao-for>
-
-<!-- Pipe operators do Angular  -->
-<app-pipes></app-pipes>
-
-<!-- Two way data binding no Angular -->
-<app-two-way-binding></app-two-way-binding>
+<footer>
+    <p>Cabeçalho</p>
+</footer>

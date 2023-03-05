@@ -14,28 +14,24 @@ import { ListService } from 'src/app/service/list.service'
 export class RepeticaoForComponent {
   myList = ['Wallace', 'Tony', 'Geto']
 
-  animals = [
-    {name:"Turca", type:"Dog"},
-    {name:"Tom", type:"Cat"},
-    {name:"Fridda", type:"Dog"},
-  ]
-
-  animalsInterface: Animal[] = [
-    {name:"Turca", type:"Dog", age: 10},
-    {name:"Tom", type:"Cat", age: 10},
-    {name:"Fridda", type:"Dog", age: 10},
-  ]
+  animalsInterface: Animal[] = []
 
   animalsDetails = ''
   
-  showAge(animal:Animal){
+  showAge(animal:Animal):void{
     this.animalsDetails = `O pet ${animal.name} possui ${animal.age} anos.`
   }
 
-  constructor(private listService: ListService){}
+  constructor(private listService: ListService){
+    this.getAnimals()
+  }
 
   removeAnimal(animal:Animal){
-    console.log(`${animal.name} foi removido com sucesso!`)
-    this.animalsInterface = this.listService.remove(this.animalsInterface, animal)
+    this.animalsInterface = this.animalsInterface.filter((a) => animal.name !== a.name)
+    this.listService.remove(animal.id).subscribe()
+  }
+
+  getAnimals():void{
+    this.listService.getAll().subscribe((animals) => (this.animalsInterface = animals))
   }
 }
