@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- VUE 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="assets/script.js" defer></script>
+    <title>Inputs e Data Binding</title>
+</head>
+<body>
+    <div id="app">
+        <form id="app-form">
+            <input
+                type="text"
+                v-model="input_name"
+                placeholder="Digite o seu nome"
+            >
+
+            <input
+                type="submit"
+                value="Enviar"
+                v-on:click="submitform"
+            >
+        </form>
+        <!-- Atualização após o envio do formulário -->
+        <p>O seu nome é: <strong>{{name}}</strong></p>
+
+        <!-- Atualização em tempo real -->
+        <p>Data Binding: <strong>{{input_name}}</strong></p>
+    </div>
+</body>
+</html>
