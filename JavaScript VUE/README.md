@@ -22,6 +22,6 @@ _**[VUE SITE](https://vuejs.org/)**_
 
 * *Criando um projeto:* `vue create <nome do projeto>`
 
-* *Ativando servidor:* `npm run server`
+* *Ativando servidor:* `npm run serve`
 
 </details>
