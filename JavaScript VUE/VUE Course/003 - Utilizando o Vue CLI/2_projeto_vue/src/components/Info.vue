@@ -2,11 +2,25 @@
     <div>
         <p v-if="In_job">Estou trabalhando no momento</p>
         <p v-else>Na procura de um emprego</p>
-        <p>Utilizo as seguintes linguagens:</p>
+        <p>Utilizo as seguintes linguagens (Back-END):</p>
+        <!-- Renderização de listas (v-for) -->
         <ul>
-            <li>C++</li>
-            <li>Python</li>
-            <li>Typescript</li>
+            <li
+                v-for="(tech, ind) in backend_technologies"
+                v-bind:key="ind"
+            >
+                {{ tech }}
+            </li>
+        </ul>
+        <hr>
+        <p>Utilizo as seguintes linguagens (Front-END):</p>
+        <ul>
+            <li
+                v-for="tech in frontend_technologies"
+                v-bind:key="tech.id"
+            >
+                {{ tech.lang }}
+            </li>
         </ul>
         <div>
             <!-- Curso de Vue 3: #11 - Métodos -->
@@ -36,7 +50,17 @@
                 show_email: false,
                 button_value: "Mostrar e-mail",
                 email: "wallace@gmail.com",
-                my_link: "https://google.com"
+                my_link: "https://google.com",
+                backend_technologies: [
+                    "C++",
+                    "Python",
+                    "TypeScript"
+                ],
+                frontend_technologies: [
+                    {id: 1, lang: "SASS"},
+                    {id: 2, lang: "Bootstrap"},
+                    {id: 3, lang: "JavaScript"},
+                ]
             }
         },
         methods:{
