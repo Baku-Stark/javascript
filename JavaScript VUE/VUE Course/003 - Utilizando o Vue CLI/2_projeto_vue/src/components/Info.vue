@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>{{ compEmail }} [PROPS]</p>
         <p v-if="In_job">Estou trabalhando no momento</p>
         <p v-else>Na procura de um emprego</p>
         <p>Utilizo as seguintes linguagens (Back-END):</p>
@@ -44,12 +45,15 @@
         components:{
             Picture
         },
+        props:{
+            compEmail: String,
+            email: String
+        },
         data(){
             return{
                 In_job: true,
                 show_email: false,
                 button_value: "Mostrar e-mail",
-                email: "wallace@gmail.com",
                 my_link: "https://google.com",
                 backend_technologies: [
                     "C++",

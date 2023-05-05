@@ -7,6 +7,7 @@
     <Hierarquia_Component />
     <Event />
     <Event_Multi />
+    <Emit/>
     <Footer />
 </template>
 
@@ -39,6 +40,7 @@
     import Hierarquia_Component from './components/Hierarquia_Component.vue';
     import Event from './components/Event.vue';
     import Event_Multi from './components/Event_Multi.vue'
+    import Emit from './components/Emit.vue';
 
     export default{
         name: 'App',
@@ -49,6 +51,7 @@
             Hierarquia_Component,
             Event,
             Event_Multi,
+            Emit,
             Header,
             Footer
         },
