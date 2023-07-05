@@ -1,0 +1,30 @@
+.header{
+    text-align: center;
+}
+
+nav{
+    margin-bottom: 5vh;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--background);
+}
+
+.title-content h1{
+    color: #FFBB33;
+}
+
+.link-content ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+li a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+li a:hover{
+    color: #FFBB33;
+}
