@@ -4,7 +4,15 @@
 
 </div>
 
-```
+<div align="center">
+
+_Imagens SVG de uso livre para projetos._
+
+[unDraw](https://undraw.co/)
+
+</div>
+
+```txt
 INICIANDO O PROJETO
 |
 `--> npm create vite@latest

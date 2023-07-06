@@ -1,5 +1,3 @@
-import './assets/css/App.css'
-
 // IMPORTANDO [content]
 import { Header } from './content/Header'
 import { Footer } from './content/Footer'

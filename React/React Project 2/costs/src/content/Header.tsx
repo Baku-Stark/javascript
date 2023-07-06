@@ -27,7 +27,7 @@ export function Header(){
                             <Link to={"/contact"}>Contact</Link>
                         </li>
                         <li>
-                            <Link to={"/new_project"}>New Project</Link>
+                            <Link to={"/new_project"}>Projetos</Link>
                         </li>
                     </ul>
                 </div>
