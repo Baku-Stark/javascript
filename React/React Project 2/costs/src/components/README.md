@@ -43,10 +43,12 @@ class MyComponent extends React.PureComponent {
 
 ## Dashboards (CHART JS)
 
+[How to Create Bar Chart with React Chart JS 2](https://www.youtube.com/watch?v=GVQ2gXGGREM)
+
 </div>
 
 > **REACT NPM**
 
-````
+```
 npm install --save chart.js react-chartjs-2
 ```
