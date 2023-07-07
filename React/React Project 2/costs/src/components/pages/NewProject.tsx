@@ -1,10 +1,12 @@
 import { useEffect } from 'react'
-import { redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ProjectForm } from '../../content/ProjectForm'
 
 import styles from '../../assets/css/NewProject.module.css'
 
 export function NewProject(){
+    const navigate = useNavigate()
+
     async function createPost(project: any){
         project.cost = 0
         project.services = []
@@ -19,7 +21,7 @@ export function NewProject(){
             .then((resp) => resp.json())
             .then((data) => {
                 console.log(data)
-                return redirect("/")
+                navigate('/')
             })
     }
     
