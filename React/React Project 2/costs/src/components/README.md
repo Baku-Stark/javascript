@@ -4,7 +4,7 @@
 
 </div>
 
-> **1**
+> **Maneira 1**
 ```ts
 import React, { useEffect } from 'react';
 
@@ -15,10 +15,8 @@ function Example() {
 }
 ```
 
-<hr>
 
-
-> **2**
+> **Maneira 2**
 ```ts
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -37,4 +35,18 @@ class MyComponent extends React.PureComponent {
     )
   }
 }
+```
+
+---
+
+<div align="center">
+
+## Dashboards (CHART JS)
+
+</div>
+
+> **REACT NPM**
+
+````
+npm install --save chart.js react-chartjs-2
 ```

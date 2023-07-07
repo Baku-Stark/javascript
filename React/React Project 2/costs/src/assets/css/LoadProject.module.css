@@ -1,3 +1,18 @@
-h1{
+.title_content{
+    text-align: center;
+}
+
+.title_content, h1{
     margin-bottom: 2vh;
+}
+
+a{
+    padding: 0.2em 0.6em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #222;
+}
+
+a:hover{
+    color: var(--theme_color);
 }
