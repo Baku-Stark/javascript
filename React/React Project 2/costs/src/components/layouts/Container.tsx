@@ -5,6 +5,7 @@ import { Home } from '../pages/Home'
 import { Company } from '../pages/Company'
 import { Contact } from '../pages/Contact'
 import { NewProject } from '../pages/NewProject'
+import { LoadProject } from '../pages/LoadProject'
 
 import styles from './Container.module.css'
 
@@ -27,6 +28,10 @@ export function Container(){
                 <Route
                     path='/new_project'
                     element={<NewProject/>}
+                />
+                <Route
+                    path='/load_project'
+                    element={<LoadProject/>}
                 />
             </Routes>
         </div>
