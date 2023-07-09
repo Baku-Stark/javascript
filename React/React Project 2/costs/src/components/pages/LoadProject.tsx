@@ -8,11 +8,15 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
 
 import { LinkButton } from '../layouts/LinkButton'
 import { Message } from '../layouts/Message'
+import { ProjectCard } from '../ProjectCard'
 
 import styles from '../../assets/css/LoadProject.module.css'
 import { useEffect, useState } from 'react'
 
 export function LoadProject(){
+    const [projects, setProjects] = useState([])
+
+    // MESSAGE========
     const location = useLocation()
     let message = ''
 
@@ -21,14 +25,14 @@ export function LoadProject(){
     }
 
     // DASHBOARD[BAR]========
-    const [readproject, setReadProject] = useState([])
+    const [dashBoard, setDashBoard] = useState([])
 
     const data = {
         labels:['Qtd. De Projetos'],
         datasets:[
             {
                 label:'Projetos',
-                data:[readproject.length],
+                data:[dashBoard.length],
                 backgroundColor:['yellow'],
                 borderColor:'black',
                 borderWidth:1
@@ -45,12 +49,13 @@ export function LoadProject(){
                 'Content-Type':'application/json'
             }
         })
-        .then((resp) => resp.json())
-        .then((data) => {
-            setReadProject(data)
-        })
-        .catch((err) => console.log(err))
-    })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setDashBoard(data)
+                setProjects(data)
+            })
+            .catch((err) => console.log(err))
+    }, [])
 
     return(
         <div className={styles.project_container}>
@@ -65,6 +70,17 @@ export function LoadProject(){
                     data={data}
                     options={options}
                 ></Bar>
+            </div>
+            <div className={styles.cards}>
+                {projects.length > 0 && projects.map((project) => (
+                    <ProjectCard
+                        id={project['id']}
+                        name={project['name']}
+                        number={project['number']}
+                        category={project['category']['name']}
+                        key={project['id']}
+                    />
+                ))}
             </div>
         </div>
     )

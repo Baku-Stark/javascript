@@ -13,7 +13,7 @@ export function Select(
         <div className={styles.form_control}>
             <label htmlFor={name}>{text}</label>
             <select name={name} id={name} onChange={handleOnChange} value={value || ''}>
-                <option disabled>Selecione uma opção</option>
+                <option disabled >Selecione uma opção</option>
                 {options.map((item: any) => (
                     <option
                         key={item.id}

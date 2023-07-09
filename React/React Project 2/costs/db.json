@@ -1,13 +1,6 @@
 {
   "projects": [
     {
-      "name": "qwe",
-      "number": "1234",
-      "cost": 0,
-      "services": [],
-      "id": 33
-    },
-    {
       "name": "Teste Message",
       "number": "555",
       "category": {
@@ -28,6 +21,17 @@
       "cost": 0,
       "services": [],
       "id": 35
+    },
+    {
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "name": "WWW",
+      "number": "122",
+      "cost": 0,
+      "services": [],
+      "id": 36
     }
   ],
   "categories": [
