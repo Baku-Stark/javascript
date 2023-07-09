@@ -12,6 +12,11 @@ export function ProjectCard(
         handleRemove
     }: any
 ){
+    const remove = (e:any) =>{
+        e.preventDefault()
+        handleRemove(id)
+    }
+
     return (
         <div className={styles.project_card}>
             <h4>{name}</h4>
@@ -20,12 +25,12 @@ export function ProjectCard(
                 <span className={styles[category.toLowerCase()]}></span> {category}
             </p>
             <div className={styles.project_card_actions}>
-                <Link to={"/"}>
+                <Link to={`/edit_project/${id}`}>
                     <BsPencil/> Editar
                 </Link>
-                <Link to={"/"}>
+                <button onClick={remove}>
                     <BsFillTrashFill/> Remover
-                </Link>
+                </button>
             </div>
         </div>
     )

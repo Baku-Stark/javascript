@@ -6,15 +6,17 @@ import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Lege
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
 // DASHBOARD[BAR]========
 
-import { LinkButton } from '../layouts/LinkButton'
+import { Loading } from '../layouts/Loading'
 import { Message } from '../layouts/Message'
 import { ProjectCard } from '../ProjectCard'
+import { LinkButton } from '../layouts/LinkButton'
 
 import styles from '../../assets/css/LoadProject.module.css'
 import { useEffect, useState } from 'react'
 
 export function LoadProject(){
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     // MESSAGE========
     const location = useLocation()
@@ -42,7 +44,22 @@ export function LoadProject(){
 
     const options = {}
 
+    async function removeProject(id:any){
+        await fetch(`http://localhost:5000/projects/${id}`, {
+            method:'DELETE',
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+            .then((resp) => resp.json())
+            .then(() => {
+                setProjects(projects.filter((project) => project['id'] !== id))
+            })
+            .catch((err) => console.log(err))
+    }
+
     useEffect(() => {
+        document.title = "Costs - All Projects"
         fetch("http://localhost:5000/projects", {
             method:'GET',
             headers:{
@@ -53,6 +70,7 @@ export function LoadProject(){
             .then((data) => {
                 setDashBoard(data)
                 setProjects(data)
+                setRemoveLoading(true)
             })
             .catch((err) => console.log(err))
     }, [])
@@ -71,6 +89,7 @@ export function LoadProject(){
                     options={options}
                 ></Bar>
             </div>
+            <hr />
             <div className={styles.cards}>
                 {projects.length > 0 && projects.map((project) => (
                     <ProjectCard
@@ -78,9 +97,15 @@ export function LoadProject(){
                         name={project['name']}
                         number={project['number']}
                         category={project['category']['name']}
+                        handleRemove={removeProject}
                         key={project['id']}
                     />
                 ))}
+
+                {!removeLoading && <Loading/>}
+                {removeLoading && projects.length === 0 && (
+                    <p>Não há projetos cadastrados!</p>
+                )}
             </div>
         </div>
     )

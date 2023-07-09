@@ -6,6 +6,7 @@ import { Company } from '../pages/Company'
 import { Contact } from '../pages/Contact'
 import { NewProject } from '../pages/NewProject'
 import { LoadProject } from '../pages/LoadProject'
+import { EditProject } from '../pages/EditProject'
 
 import styles from './Container.module.css'
 
@@ -32,6 +33,10 @@ export function Container(){
                 <Route
                     path='/load_project'
                     element={<LoadProject/>}
+                />
+                <Route
+                    path='/edit_project/:id'
+                    element={<EditProject/>}
                 />
             </Routes>
         </div>

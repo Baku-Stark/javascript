@@ -5,6 +5,8 @@ export function Company(){
         document.title = "Costs - Company"
     }, [])
     return(
-        <div></div>
+        <div>
+            <p>Uma empresa nada séria</p>
+        </div>
     )
 }

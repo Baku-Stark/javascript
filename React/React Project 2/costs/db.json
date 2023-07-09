@@ -1,37 +1,15 @@
 {
   "projects": [
     {
-      "name": "Teste Message",
-      "number": "555",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 34
-    },
-    {
       "name": "Teste Message 2",
-      "number": "15000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 35
-    },
-    {
+      "number": "200",
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "name": "WWW",
-      "number": "122",
       "cost": 0,
       "services": [],
-      "id": 36
+      "id": 2
     }
   ],
   "categories": [
