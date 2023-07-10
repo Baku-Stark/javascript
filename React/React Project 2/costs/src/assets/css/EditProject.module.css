@@ -7,7 +7,7 @@
     border-bottom: 1px solid #222;
 }
 
-.edit_container .title_container{
+.title_container{
     margin-bottom: 3vh;
     display: flex;
     justify-content: space-between;
@@ -41,6 +41,11 @@
 .edit_container .content_container p{
     margin-bottom: 0.3em;
 }
+
 .content_container p span{
     font-weight: bold;
+}
+
+.service_container{
+    width: 100%;
 }
