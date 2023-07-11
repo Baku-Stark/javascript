@@ -21,5 +21,5 @@ INICIANDO O PROJETO
 
 INSTALAÇÃO [EXTRAS]
 |
-`--> npm install json-server react-icons react-router-dom uuid
+`--> npm install json-server react-icons react-router-dom uuidv4
 ```

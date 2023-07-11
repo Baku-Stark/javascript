@@ -4,8 +4,6 @@
 
 </div>
 
-**package.json**
-
 > _Ativando Api_
 
 ```json

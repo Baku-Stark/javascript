@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { parse, v4 as uuidv4 } from 'uuid'
 
 import { Loading } from '../layouts/Loading'
+import { Message } from '../layouts/Message'
+import { ServiceForm } from '../service/ServiceForm'
 import { ProjectForm } from '../../content/ProjectForm'
+
 import styles from '../../assets/css/EditProject.module.css'
 
 export function EditProject(){
@@ -62,6 +66,45 @@ export function EditProject(){
         }
     }
 
+    // === CRIAR UM SERVIÇO
+    async function createService(project: any){
+        // last service
+        const lastService = project.services[project.services.length - 1]
+        lastService.id = uuidv4()
+
+        const lastServiceCost = lastService.cost
+        
+        const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+        if(newCost > parseFloat(project.number)){
+            // mostrar mensagem de error
+            console.log("ERROR!")
+            project.services.pop()
+        }
+
+        else{
+            // adicionar o custo
+            project.cost = newCost
+
+            // atualizar projeto(cost)
+            await fetch(`http://localhost:5000/projects/${project['id']}`, {
+                method:'PATCH',
+                body:JSON.stringify(project),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            })
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setProject(data)
+                    setShowServiceForm(false)
+                })
+                .catch((err) => console.log(err))
+
+            console.log("SERVIÇO CRIADO COM SUCESSO!")
+        }
+    }
+
     return(
         <>
             {project.name ? 
@@ -94,7 +137,9 @@ export function EditProject(){
                                 </p>
                             </div>
                         ) : (
-                            <ProjectForm handleSubmit={updateProject} btnText="Concluir Edição" projectData={project} />
+                            <ProjectForm
+                                handleSubmit={updateProject} btnText="Concluir Edição" projectData={project}
+                            />
                         )}
                     </div>
                     {/* ===== SERVICES ===== */}
@@ -115,7 +160,11 @@ export function EditProject(){
                                 <h4>Serviços</h4>
                             </div>
                         ) : (
-                            <div>FOMULARIO</div>
+                            <ServiceForm
+                                handleSumbit={createService}
+                                btnText="Adicionar Serviços"
+                                projectData={project}
+                            />
                         ) }
                     </div>
                     <div className={styles.service_container}>

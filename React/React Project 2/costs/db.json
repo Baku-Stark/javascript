@@ -7,8 +7,15 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 22,
+      "services": [
+        {
+          "name": "ewewq",
+          "cost": "22",
+          "description": "vendas",
+          "id": "2eb5d7d7-196c-4f73-b06e-92c927026e84"
+        }
+      ],
       "id": 2
     }
   ],
