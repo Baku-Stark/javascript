@@ -7,13 +7,13 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 22,
+      "cost": 56,
       "services": [
         {
-          "name": "ewewq",
-          "cost": "22",
-          "description": "vendas",
-          "id": "2eb5d7d7-196c-4f73-b06e-92c927026e84"
+          "name": "Travamento",
+          "cost": "56",
+          "description": "Travar a conta",
+          "id": "82b1d949-21d8-4cd4-94fa-e0036bfa3568"
         }
       ],
       "id": 2

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { parse, v4 as uuidv4 } from 'uuid'
 
 import { Loading } from '../layouts/Loading'
-import { Message } from '../layouts/Message'
+import { ServiceCard } from '../service/ServiceCard'
 import { ServiceForm } from '../service/ServiceForm'
 import { ProjectForm } from '../../content/ProjectForm'
 
@@ -12,6 +12,9 @@ import styles from '../../assets/css/EditProject.module.css'
 export function EditProject(){
     // === PEGANDO O ID ATIVO
     const {id} = useParams()
+
+    // SERVIÇOS
+    const [services, setServices] = useState([])
 
     const [showProjectForm, setShowProjectForm] = useState(false)
     function toggleProjectForm(){
@@ -36,6 +39,7 @@ export function EditProject(){
                 .then((resp) => resp.json())
                 .then((data) => {
                     setProject(data)
+                    setServices(data.services)
                 })
                 .catch((err) => console.log(err))
         }, 300)
@@ -105,6 +109,31 @@ export function EditProject(){
         }
     }
 
+    // === EXCLUIR UM SERVIÇO
+    async function removeServie(id: any, cost: any){
+        const servicesUpdated = project.services.filter(
+            (service: any) => service.id !== id
+        )
+
+        const projectUpdated = project
+
+        projectUpdated.services = servicesUpdated
+        projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+        await fetch(`http://localhost:5000/projects/${projectUpdated['id']}`, {
+            method:'PATCH',
+            body:JSON.stringify(projectUpdated),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                setProject(projectUpdated)
+                setServices(servicesUpdated)
+            })
+    }
+
     return(
         <>
             {project.name ? 
@@ -142,7 +171,7 @@ export function EditProject(){
                             />
                         )}
                     </div>
-                    {/* ===== SERVICES ===== */}
+                    {/* ===== SERVICES (CREATE) ===== */}
                     <div className={styles.edit_container}>
                         <div className={styles.title_container}>
                             <h2>
@@ -157,7 +186,7 @@ export function EditProject(){
                         </div>
                         {!showServiceForm ? (
                             <div className={styles.content_container}>
-                                <h4>Serviços</h4>
+                                <h4>Insira um novo serviço ao seu projeto</h4>
                             </div>
                         ) : (
                             <ServiceForm
@@ -167,14 +196,25 @@ export function EditProject(){
                             />
                         ) }
                     </div>
+                    {/* ===== SERVICES (READ) ===== */}
                     <div className={styles.service_container}>
                         <h2>
-                            Adicione um serviço
+                            Serviços
                         </h2>
                         <div className={styles.content_container}>
-                            <p>
-                                Itens de serviço
-                            </p>
+                            {services.length > 0 && services.map((service) => (
+                                <ServiceCard
+                                    key={service['id']}
+                                    id={service['id']}
+                                    name={service['name']}
+                                    cost={service['cost']}
+                                    description={service['description']}
+                                    handleRemove={removeServie}
+                                />
+                            ))}
+                            {services.length === 0 && (
+                                <p>Não há serviços no cadastrados...</p>
+                            )}
                         </div>
                     </div>
                 </>
