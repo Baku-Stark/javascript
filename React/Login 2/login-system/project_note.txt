@@ -1,5 +1,12 @@
 Ant Design
 `-> https://ant.design/docs/react/introduce
 
-Req | Res
+Req | Res (API de LOGIN Falso)
 `-> https://reqres.in/
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+
+AXIOS
+`-> https://axios-http.com/ptbr/docs/intro
