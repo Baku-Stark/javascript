@@ -1,4 +1,5 @@
-require('./modules/path');
+// require('./modules/path');
+require('./modules/fs');
 
 const {Person} = require('./person');
 
