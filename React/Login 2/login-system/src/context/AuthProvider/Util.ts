@@ -11,7 +11,7 @@ export function getUserLocalStorage(){
         return null
     }
 
-    const user = JSON.stringify(json)
+    const user = JSON.parse(json)
     return user ?? null
 }
 
