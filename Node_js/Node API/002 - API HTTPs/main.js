@@ -105,10 +105,20 @@ app.delete('/user/delete/:id', async (req, res) => {
 app.put('/update/put_user_body=:id', async (req, res) => {
     try {
         const id = req.params.id;
+        const request = req.body;
 
         users['data'].map((data) => {
             if(data['id'] == id ){
-                console.log(data)
+                const index = users['data'].indexOf(data);
+                
+                // console.log("Data: " + data)
+                // console.log("Index: " + index)
+                // users['data'].splice(index, 1);
+
+                data['name'] = request.name
+                data['age'] = request.age
+                data['job'] = request.job
+
             }
         });
 
