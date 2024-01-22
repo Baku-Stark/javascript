@@ -1,21 +1,34 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require("mongodb");
 
 const uri = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@nodeapi.61bjodc.mongodb.net/?retryWrites=true&w=majority`;
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+
 const client = new MongoClient(uri);
+// client.connect();
 
-async function run() {
-  try {
-    await client.connect();
+const dbName = "myListUsers";
+const collectionName = "users";
 
-    const database = client.db("myListUsers");
-    const collection = database.collection("users");
-    
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  }
+const database = client.db(dbName);
+const collection = database.collection(collectionName);
+
+class DataBase{
+  async insert_user(doc){
+    try {
+      const cursor = await collection.insertOne(doc)
   
-  finally {
-    await client.close();
+      console.log("Great! " + cursor.insertedId)
+    }
+    
+    catch (err) {
+      console.error(`Situation: ${err}\n`);
+    }
+
+    // finally{
+    //   await client.close();
+    // }
   }
 }
-run().catch(console.dir);
+
+module.exports = {
+  DataBase
+}

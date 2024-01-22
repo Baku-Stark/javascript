@@ -1,17 +1,13 @@
-const UserModel = require('../model/user.model')
+const { DataBase } = require('../db/connect');
 
 const express = require('express');
 const app = express()
-
-const database = client.db("myListUsers");
-const collection = database.collection("users");
 
 app.use(express.json());
 
 app.get('/get_all_users', async (req, res) => {
     try {
-        const users = await UserModel.find({});
-        return res.status(200).json(users);
+        return res.status(200).json(Read_All_Users());
     }
     
     catch (error) {
@@ -21,8 +17,11 @@ app.get('/get_all_users', async (req, res) => {
 
 app.post('/create_users', async (req, res) => {
     try {
-        const response = await UserModel.create(req.body)
-        return res.status(201).json(response);
+        const new_user = req.body
+        const db = new DataBase()
+        db.insert_user(new_user)
+        
+        return res.status(201).json(new_user);
     }
     
     catch (error) {

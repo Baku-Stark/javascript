@@ -4,7 +4,5 @@ const express = require('express');
 const dotenv = require('dotenv');
 dotenv.config();
 
-require('./db/connect');
-
 /* --- services/express.js --- */ 
 require('./services/express')
